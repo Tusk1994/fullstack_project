@@ -15,8 +15,8 @@ class SiteNews(object):
 
             dict_news[n] = News(
                 title=the_feed.get("title", ""),
-                link=the_feed.get("title", ""),
-                description=the_feed.get("title", "")
+                link=the_feed.get("link", ""),
+                description=the_feed.get("description", "")
             )
 
         return dict_news
