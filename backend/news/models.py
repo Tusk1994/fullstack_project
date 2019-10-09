@@ -13,11 +13,12 @@ class SiteNews(object):
 
         for n, the_feed in enumerate(the_feeds.entries):
 
-            dict_news[n] = News(
-                title=the_feed.get("title", ""),
-                link=the_feed.get("link", ""),
-                description=the_feed.get("description", "")
-            )
+            if n < 5:
+                dict_news[n] = News(
+                    title=the_feed.get("title", ""),
+                    link=the_feed.get("link", ""),
+                    description=the_feed.get("description", "")
+                )
 
         return dict_news
 
@@ -29,7 +30,7 @@ class News(object):
 
 
 site_news = {
-    1: SiteNews(id=1, name='Medusa', url_rss=''),
-    2: SiteNews(id=2, name='FBK', url_rss=''),
+    1: SiteNews(id=1, name='3dnews', url_rss='https://3dnews.ru/cpu/rss/'),
+    2: SiteNews(id=2, name='Lenta', url_rss='https://lenta.ru/rss/top7'),
     3: SiteNews(id=3, name='Yandex', url_rss='https://news.yandex.ru/auto.rss'),
 }
