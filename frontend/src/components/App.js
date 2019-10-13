@@ -3,14 +3,16 @@ import Site from './Site'
 
 class App extends Component {
 
-  render() {
-    return (
-      <div>
-        <h1>App name</h1>
-        <Site/>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="container">
+                <h1 className="display-3 text-center">
+                    <a className="text-dark" href=".">News</a>
+                </h1>
+                <Site/>
+            </div>
+        );
+    }
 }
 
 export default App;

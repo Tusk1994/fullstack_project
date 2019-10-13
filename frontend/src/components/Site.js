@@ -23,14 +23,13 @@ class Site extends Component {
     render() {
         return (
             <div>
-                {this.state.sites.map(item => (
-                    <div key={item.id}>
-                        <h1>{item.name}</h1>
-                        <button id={item.id} onClick={this.handleClick}>
-                            Показать
+                <div className="navbar bg-dark mb-4">
+                    {this.state.sites.map(item => (
+                        <button className="nav-link btn btn-link text-white p-2" key={item.id} id={item.id} onClick={this.handleClick}>
+                            {item.name}
                         </button>
-                    </div>
-                ))}
+                    ))}
+                </div>
                 <div>
                     <News name={this.state.id}/>
                 </div>

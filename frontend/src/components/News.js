@@ -31,12 +31,17 @@ class News extends Component {
 
     render() {
         return (
-
-            <div>
+            <div className="container">
                 {this.state.news.map((item, i) => (
                     <div key={i}>
-                        <h1>{item.title}</h1>
-                        <span>{item.description}</span>
+                        <div className="row border overflow-hidden mb-4 p-4 shadow bg-white">
+                            <div>
+                                <h3>{item.title}</h3>
+                                <div className="mb-1 text-muted">{item.pubdate}</div>
+                                <p className="card-text text-justify">{item.description}</p>
+                                <a href={item.link} target="_blank" rel="noopener noreferrer">Continue reading</a>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
